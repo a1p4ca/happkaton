@@ -1,0 +1,29 @@
+<Page ux:Class="PlusPostPage" Color="#CED8F6">
+	<Router ux:Dependency="router" />
+
+	<ClientPanel>
+		<StackPanel>
+			<Rectangle Height="60" Color="#2E64FE">
+				<Shadow />
+				<Text Value="Back" Alignment="CenterLeft" Margin="15, 0, 0, 0" Color="#ffffff" FontSize="25">
+					<Shadow Size="25" />
+				</Text>
+			</Rectangle>
+			<Rectangle Height="600" Margin="10, 40, 10, 0" CornerRadius="20" Color="#E0E6F8">
+				
+				<Rectangle Height="2" Color="#CED8F6" Width="350" Alignment="Top" Margin="0, 110, 0, 0" />
+				<Circle Color="#ffffff" Width="85" Height="85" Alignment="TopLeft" Margin="25, 12, 0, 0" />
+				<Text Value="Name" FontSize="21" Alignment="TopCenter" Margin="0, 40, 70, 0" Color="#ffffff" />
+				<TextView Width="350" Background="#ffffff" Margin="0, 50, 0, 0" Height="400" TextAlignment="Left" TextWrapping="NoWrap" Alignment="Default" />
+				<Circle Alignment="BottomLeft" Margin="30, 0, 0, 10" Width="50" Height="50" Color="#CED8F6">
+					<Image File="..\Assets\camera.png" Width="35" Height="35" />
+				</Circle>
+				<Rectangle Height="50" Width="70" Color="#CED8F6" Alignment="BottomRight" Margin="0, 0, 20, 10" CornerRadius="20">
+					<Text Alignment="Center" Value="OK" FontSize="25" Color="#ffffff" />
+				</Rectangle>
+			</Rectangle>
+			
+			
+		</StackPanel>
+	</ClientPanel>
+</Page>

@@ -1,0 +1,75 @@
+<Page ux:Class="SelectImagePage" Color="#CED8F6">
+	<Router ux:Dependency="router" />
+
+	<ClientPanel>
+		<StackPanel>
+			<Rectangle Color="#2E64FE" Height="60">
+				<Text FontSize="25" Color="#ffffff" Alignment="CenterLeft" Margin="75, 0, 0, 0" Value="Back" />
+				<Shadow />
+				<Text FontSize="25" Color="#ffffff" Alignment="CenterRight" Margin="0, 0, 75, 0" Value="Next" />
+				<Rectangle Height="2" Color="#ffffff" Width="37">
+					<Rotation Degrees="90" />
+				</Rectangle>
+			</Rectangle>
+			<ScrollView Margin="0, 3, 0, 0" KeepFocusInView="true" Height="670">
+				<Grid ColumnCount="4" CellSpacing="1">
+					<Image File="..\Assets\ProfileEx1.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx2.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx3.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx4.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx5.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx6.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx7.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx8.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx9.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx10.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx11.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx1.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx2.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx3.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx4.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx5.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx6.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx7.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx8.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx9.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx10.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx11.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx1.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx2.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx3.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx4.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx5.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx6.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx7.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx8.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx9.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx10.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx11.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx1.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx2.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx3.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx4.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx5.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx6.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx7.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx8.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx9.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx10.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx11.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx1.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx2.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx3.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx4.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx5.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx6.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx7.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx8.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx9.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx10.jpg" Dock="Fill" StretchMode="UniformToFill" />
+					<Image File="..\Assets\ProfileEx11.jpg" Dock="Fill" StretchMode="UniformToFill" />
+				</Grid>
+			</ScrollView>
+		</StackPanel>
+	</ClientPanel>
+</Page>
