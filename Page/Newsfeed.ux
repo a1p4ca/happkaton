@@ -1,0 +1,30 @@
+<Page ux:Class="Newsfeed">
+	<Router ux:Dependency="router" />
+	<JavaScript File="..\controller\Newsfeed.js" />
+
+	<StackPanel ux:Class="PostView" Margin="20, 10, 20, 10" Padding="10, 10, 10, 10" Opacity="1" Background="#ffffff">
+		<DockPanel>
+			<Circle Dock="Left" Width="40" Height="40" Background="#ffff00" />
+			<Text Value="{username}" Alignment="CenterLeft" Margin="10, 0, 0, 0" />
+		</DockPanel>
+		
+		<Image File="{image}" Margin="8, 12, 8, 12" />
+		<Text Value="{message}" />
+		<DockPanel Margin="0, 5, 0, 0">
+			<Text FontSize="12" Value="{date}" Margin="0, 0, 0, 0" Alignment="CenterLeft" />
+			<Text Value="({location[0]}, {location[1]}) 에서" Alignment="CenterRight" FontSize="12" />
+		</DockPanel>
+		<Shadow />
+	</StackPanel>
+
+	<ClientPanel>
+		<Rectangle Color="#000000" Width="150" Height="150" Alignment="Bottom" Clicked="{move}" />
+		<ScrollView>
+			<StackPanel ItemSpacing="0" Margin="0, 0, 0, 0">
+				<Each Items="{posts}">
+					<PostView />
+				</Each>
+			</StackPanel>
+		</ScrollView>
+	</ClientPanel>
+</Page>
