@@ -1,43 +1,14 @@
 [Uno.Compiler.UxGenerated]
 public partial class MainView: Fuse.App
 {
-    [Uno.Compiler.UxGenerated]
-    public partial class Template: Uno.UX.Template
-    {
-        [Uno.WeakReference] internal readonly MainView __parent;
-        [Uno.WeakReference] internal readonly MainView __parentInstance;
-        public Template(MainView parent, MainView parentInstance): base(null, false)
-        {
-            __parent = parent;
-            __parentInstance = parentInstance;
-        }
-        global::Uno.UX.Property<string> temp_Value_inst;
-        global::Uno.UX.Property<string> temp1_Value_inst;
-        static Template()
-        {
-        }
-        public override object New()
-        {
-            var __self = new global::Fuse.Controls.StackPanel();
-            var temp = new global::Fuse.Controls.Text();
-            temp_Value_inst = new Happkaton_FuseControlsTextControl_Value_Property(temp, __selector0);
-            var temp2 = new global::Fuse.Reactive.Data("username");
-            var temp1 = new global::Fuse.Controls.Text();
-            temp1_Value_inst = new Happkaton_FuseControlsTextControl_Value_Property(temp1, __selector0);
-            var temp3 = new global::Fuse.Reactive.Data("userimage");
-            var temp4 = new global::Fuse.Reactive.DataBinding(temp_Value_inst, temp2, Fuse.Reactive.BindingMode.Default);
-            var temp5 = new global::Fuse.Reactive.DataBinding(temp1_Value_inst, temp3, Fuse.Reactive.BindingMode.Default);
-            temp.Bindings.Add(temp4);
-            temp1.Bindings.Add(temp5);
-            __self.Children.Add(temp);
-            __self.Children.Add(temp1);
-            return __self;
-        }
-        static global::Uno.UX.Selector __selector0 = "Value";
-    }
-    global::Uno.UX.Property<object> temp_Items_inst;
+    global::Uno.UX.Property<double> temp_Latitude_inst;
+    global::Uno.UX.Property<double> temp_Longitude_inst;
+    internal global::Fuse.Navigation.Router router;
+    internal global::Fuse.Controls.TextInput shadow;
     global::Uno.UX.NameTable __g_nametable;
     static string[] __g_static_nametable = new string[] {
+        "router",
+        "shadow"
     };
     static MainView()
     {
@@ -175,28 +146,104 @@ public partial class MainView: Fuse.App
         var temp17 = new global::FuseJS.FileReaderImpl();
         var temp18 = new global::FuseJS.UserEvents();
         __g_nametable = new global::Uno.UX.NameTable(null, __g_static_nametable);
-        var temp = new global::Fuse.Reactive.Each();
-        temp_Items_inst = new Happkaton_FuseReactiveEach_Items_Property(temp, __selector0);
-        var temp19 = new global::Fuse.Reactive.Data("posts");
-        var temp20 = new global::Fuse.Reactive.JavaScript(__g_nametable);
+        var temp = new global::Fuse.Controls.MapMarker();
+        temp_Latitude_inst = new Happkaton_FuseControlsMapMarker_Latitude_Property(temp, __selector0);
+        var temp19 = new global::Fuse.Reactive.Data("latitude");
+        temp_Longitude_inst = new Happkaton_FuseControlsMapMarker_Longitude_Property(temp, __selector1);
+        var temp20 = new global::Fuse.Reactive.Data("longtitude");
+        router = new global::Fuse.Navigation.Router();
         var temp21 = new global::Fuse.Controls.ClientPanel();
-        var temp22 = new global::Fuse.Controls.ScrollView();
-        var temp23 = new global::Fuse.Controls.StackPanel();
-        var temp24 = new Template(this, this);
-        var temp25 = new global::Fuse.Reactive.DataBinding(temp_Items_inst, temp19, Fuse.Reactive.BindingMode.Default);
-        temp20.Code = "\n\t\t\tconst Observable = require('FuseJS/Observable');\n\t\t\tconst mocks = require('./mock');\n\t\t\t\n\t\t\tvar posts = mocks.posts;\n\t\t\tvar users = mocks.users;\n\n\t\t\tmodule.exports = {\n\t\t\t\tposts : posts\n\t\t\t}\n\t";
-        temp20.LineNumber = 2;
-        temp20.FileName = "MainView.ux";
+        var temp22 = new global::Fuse.Reactive.JavaScript(__g_nametable);
+        var temp23 = new global::Fuse.Controls.NativeViewHost();
+        var temp24 = new global::Fuse.Controls.Rectangle();
+        var temp25 = new global::Fuse.Controls.Rectangle();
+        var temp26 = new global::Fuse.Controls.Image();
+        var temp27 = new global::Fuse.Controls.Rectangle();
+        var temp28 = new global::Fuse.Controls.ScrollView();
+        var temp29 = new global::Fuse.Controls.Rectangle();
+        var temp30 = new global::Fuse.Controls.Image();
+        shadow = new global::Fuse.Controls.TextInput();
+        var temp31 = new global::Fuse.Drawing.StaticSolidColor(float4(1f, 1f, 1f, 1f));
+        var temp32 = new global::Fuse.Controls.Image();
+        var temp33 = new global::Fuse.Controls.MapView();
+        var temp34 = new global::Fuse.Reactive.DataBinding(temp_Latitude_inst, temp19, Fuse.Reactive.BindingMode.Default);
+        var temp35 = new global::Fuse.Reactive.DataBinding(temp_Longitude_inst, temp20, Fuse.Reactive.BindingMode.Default);
+        router.Name = __selector2;
         temp21.Children.Add(temp22);
-        temp22.Children.Add(temp23);
-        temp23.ItemSpacing = 10f;
-        temp23.Margin = float4(10f, 10f, 10f, 10f);
-        temp23.Children.Add(temp);
-        temp.Templates.Add(temp24);
-        temp.Bindings.Add(temp25);
+        temp21.Children.Add(temp23);
+        temp22.Code = "\n\t\t\tconst Observable = require('FuseJS/Observable')\n\t\t\tconst users = Observable(\n\t\t\t    {\n\t\t\t        id: 0,\n\t\t\t        name: \"사람인\",\n\t\t\t        image: \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvwALUKGflg-nRY0Z0Xr0pjmfrnxhLtJsU39GFX2RTmSQ_skBLww\",\n\t\t\t        bio: \"저는 고기잡는 사람입니다.\",\n\t\t\t        follower: [1, 2], // 자신을 팔로우하는 사람\n\t\t\t        following: [1, 3, 4] // 자신이 팔로잉하는 사람\n\t\t\t    },\n\t\t\t    {\n\t\t\t        id: 1,\n\t\t\t        name: \"홍길동\",\n\t\t\t        image: \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvwALUKGflg-nRY0Z0Xr0pjmfrnxhLtJsU39GFX2RTmSQ_skBLww\",\n\t\t\t        bio: \"저는 회먹는 사람입니다\",\n\t\t\t        follower: [0, 3],\n\t\t\t        following: [0, 2, 3, 4]\n\t\t\t    },\n\t\t\t    {\n\t\t\t        id: 2,\n\t\t\t        name: \"김건\",\n\t\t\t        image: \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvwALUKGflg-nRY0Z0Xr0pjmfrnxhLtJsU39GFX2RTmSQ_skBLww\",\n\t\t\t        bio: \"울진 해양 전문가\",\n\t\t\t        follower: [1, 4],\n\t\t\t        following: [0, 4]\n\t\t\t    },\n\t\t\t    {\n\t\t\t        id: 3,\n\t\t\t        name: \"John\",\n\t\t\t        image: \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvwALUKGflg-nRY0Z0Xr0pjmfrnxhLtJsU39GFX2RTmSQ_skBLww\",\n\t\t\t        bio: \"Beautiful Sea\",\n\t\t\t        follower: [0, 1],\n\t\t\t        following: [1, 4]\n\t\t\t    },\n\t\t\t    {\n\t\t\t        id: 4,\n\t\t\t        name: \"이지은\",\n\t\t\t        image: \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvwALUKGflg-nRY0Z0Xr0pjmfrnxhLtJsU39GFX2RTmSQ_skBLww\",\n\t\t\t        bio: \"바다 넘 조아용~\",\n\t\t\t        follower: [0, 1, 2, 3],\n\t\t\t        following: [2]\n\t\t\t    }\n\t\t\t)\n\n\t\t\tconst posts = Observable(\n\t\t\t    {\n\t\t\t        userid: 0,\n\t\t\t        location: ['59.9117715', '10.7400957'],\n\t\t\t        message: \"고기 잡았다!\",\n\t\t\t        image: \"http://cfile10.uf.tistory.com/image/124C5A3B502CFB370EE113\",\n\t\t\t        date: new Date()\n\t\t\t    },\n\t\t\t    {\n\t\t\t        userid: 3,\n\t\t\t        location: ['38.9157715', '160.7400957'],\n\t\t\t        message: \"즐거운 바다여행~\",\n\t\t\t        image: \"http://cfile10.uf.tistory.com/image/124C5A3B502CFB370EE113\",\n\t\t\t        date: new Date()\n\t\t\t    },\n\t\t\t    {\n\t\t\t        userid: 4,\n\t\t\t        location: ['70.1035214', '30.7400957'],\n\t\t\t        message: \"바다왔어요 여러분!\",\n\t\t\t        image: \"http://cfile10.uf.tistory.com/image/124C5A3B502CFB370EE113\",\n\t\t\t        date: new Date()\n\t\t\t    }\n\t\t\t)\n\t\t\tconst mocks = {users: users, posts: posts}\n\t\t\tconst location = Observable(mocks.posts.getAt(2).location)\n\t\t\tconst latitude = Observable(location.value[0])\n\t\t\tconst longtitude = Observable(location.value[1])\n\n\t\t\tsetInterval(() => {\n\t\t\t\tlatitude.value = mocks.posts.getAt(Math.random() * 3 | 0).location[0]\n\t\t\t\tlongtitude.value = mocks.posts.getAt(Math.random() * 3 | 0).location[1]\n\n\t\t\t}, 2000)\n\n\t\t\tmodule.exports = {\n\t\t\t\tlatitude, longtitude\n\t\t\t}\n\n\t\t\tconsole.log(module.exports.longtitude.toString())\n\t\t";
+        temp22.LineNumber = 10;
+        temp22.FileName = "MainView.ux";
+        temp23.Children.Add(temp24);
+        temp23.Children.Add(temp29);
+        temp23.Children.Add(temp32);
+        temp23.Children.Add(temp33);
+        temp24.CornerRadius = float4(20f, 20f, 20f, 20f);
+        temp24.Color = float4(1f, 1f, 1f, 1f);
+        temp24.Width = new Uno.UX.Size(390f, Uno.UX.Unit.Unspecified);
+        temp24.Height = new Uno.UX.Size(620f, Uno.UX.Unit.Unspecified);
+        temp24.Alignment = Fuse.Elements.Alignment.BottomCenter;
+        temp24.Margin = float4(20f, 0f, 20f, 15f);
+        temp24.Opacity = 1f;
+        temp24.Children.Add(temp25);
+        temp24.Children.Add(temp26);
+        temp24.Children.Add(temp27);
+        temp25.Color = float4(0.3098039f, 0.6f, 0.9333333f, 1f);
+        temp25.Width = new Uno.UX.Size(100f, Uno.UX.Unit.Unspecified);
+        temp25.Height = new Uno.UX.Size(100f, Uno.UX.Unit.Unspecified);
+        temp25.Opacity = 0.575f;
+        temp26.Width = new Uno.UX.Size(50f, Uno.UX.Unit.Unspecified);
+        temp26.Height = new Uno.UX.Size(50f, Uno.UX.Unit.Unspecified);
+        temp26.Alignment = Fuse.Elements.Alignment.TopRight;
+        temp26.Margin = float4(0f, 15f, 15f, 0f);
+        temp26.File = new global::Uno.UX.BundleFileSource(import("../../../Assets/kakao_profile.png"));
+        temp27.CornerRadius = float4(10f, 10f, 10f, 10f);
+        temp27.Color = float4(0.8901961f, 0.8941177f, 0.9098039f, 1f);
+        temp27.Width = new Uno.UX.Size(200f, Uno.UX.Unit.Unspecified);
+        temp27.Height = new Uno.UX.Size(5f, Uno.UX.Unit.Unspecified);
+        temp27.Alignment = Fuse.Elements.Alignment.Top;
+        temp27.Margin = float4(0f, 7f, 0f, 0f);
+        temp27.Opacity = 1f;
+        temp27.Children.Add(temp28);
+        temp29.Color = float4(1f, 1f, 1f, 1f);
+        temp29.Width = new Uno.UX.Size(260f, Uno.UX.Unit.Unspecified);
+        temp29.Height = new Uno.UX.Size(50f, Uno.UX.Unit.Unspecified);
+        temp29.Alignment = Fuse.Elements.Alignment.TopLeft;
+        temp29.Margin = float4(20f, 15f, 0f, 0f);
+        temp29.Children.Add(temp30);
+        temp29.Children.Add(shadow);
+        temp30.Width = new Uno.UX.Size(25f, Uno.UX.Unit.Unspecified);
+        temp30.Height = new Uno.UX.Size(25f, Uno.UX.Unit.Unspecified);
+        temp30.Alignment = Fuse.Elements.Alignment.CenterRight;
+        temp30.Margin = float4(0f, 0f, 15f, 0f);
+        temp30.File = new global::Uno.UX.BundleFileSource(import("../../../search.png"));
+        shadow.Value = "지도 검색";
+        shadow.Width = new Uno.UX.Size(210f, Uno.UX.Unit.Unspecified);
+        shadow.Height = new Uno.UX.Size(40f, Uno.UX.Unit.Unspecified);
+        shadow.Alignment = Fuse.Elements.Alignment.CenterRight;
+        shadow.Margin = float4(0f, 0f, 5f, 0f);
+        shadow.Name = __selector3;
+        shadow.Background = temp31;
+        temp32.Width = new Uno.UX.Size(50f, Uno.UX.Unit.Unspecified);
+        temp32.Height = new Uno.UX.Size(50f, Uno.UX.Unit.Unspecified);
+        temp32.Alignment = Fuse.Elements.Alignment.TopRight;
+        temp32.Margin = float4(0f, 15f, 15f, 0f);
+        temp32.File = new global::Uno.UX.BundleFileSource(import("../../../Assets/kakao_profile.png"));
+        temp33.Zoom = 1;
+        temp33.Latitude = 70.1035214;
+        temp33.Longitude = 30.7400957;
+        temp33.Children.Add(temp);
+        temp.Label = "도동등대(멸치)";
+        temp.Bindings.Add(temp34);
+        temp.Bindings.Add(temp35);
         __g_nametable.This = this;
-        this.Children.Add(temp20);
+        __g_nametable.Objects.Add(router);
+        __g_nametable.Objects.Add(shadow);
+        this.Children.Add(router);
         this.Children.Add(temp21);
     }
-    static global::Uno.UX.Selector __selector0 = "Items";
+    static global::Uno.UX.Selector __selector0 = "Latitude";
+    static global::Uno.UX.Selector __selector1 = "Longitude";
+    static global::Uno.UX.Selector __selector2 = "router";
+    static global::Uno.UX.Selector __selector3 = "shadow";
 }

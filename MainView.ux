@@ -94,11 +94,39 @@
 		</JavaScript>
 		<NativeViewHost> 
 
-			<Rectangle Alignment="BottomCenter" Color="#ffffff" CornerRadius="20" Margin="20, 0, 20, 15" Width="390" Height="620">
-				<Rectangle Color="#e3e4e8" Width="200" CornerRadius="10" Alignment="Top" Margin="0, 7, 0, 0" Height="5" />
-				<ScrollView> <!-- 여기서부터 복붙시작 -->
+			<Rectangle Alignment="BottomCenter" Color="#ffffff" CornerRadius="20" Margin="20, 0, 20, 15" Width="390" Height="620" Opacity="1">
+				
+				<Rectangle ux:Name="overlayRect" Color="#e3e4e8" Width="200" CornerRadius="10" Alignment="Top" Margin="0, 7, 0, 0" Height="5" Opacity="1" />
+				<ScrollView>
+					<StackPanel Orientation="Vertical">
 
+						<Panel Margin="0, 50, 0, 0">
+							<Rectangle Color="#4F99EE" Opacity="0.861" Alignment="CenterLeft" Margin="30, 0, 0, 0" Height="150" Width="150">
+								<Text Alignment="Center" Margin="0, 0, 0, 0" Value="금붕어를 잡았어요!" TextAlignment="Center" TextWrapping="Wrap" Color="#FFFFFF" />
+								<Text Alignment="BottomRight" Margin="0, 0, 10, 10" Value="|  포항 항구에서" TextAlignment="Center" TextWrapping="Wrap" Color="#FFFFFF" FontSize="10" />
+							</Rectangle>
+							<Image Url="https://cdn.pixabay.com/photo/2014/11/19/15/05/goldfish-537832__480.jpg" Alignment="CenterLeft" Margin="25, 0, 0, 0" Dock="Fill" StretchMode="UniformToFill" Width="250" Height="100" />
+						</Panel>
+						<Panel Margin="0, 30, 0, 0">
+							<Rectangle Color="#9F41FF" Opacity="0.861" Alignment="CenterLeft" Margin="30, 0, 0, 0" Height="150" Width="150">
+								<Text Alignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" TextWrapping="Wrap" Color="#FFFFFF" Value="우와! 월척이다" />
+								<Text Alignment="BottomRight" Margin="0, 0, 10, 10" Value="|  부산항에서" TextAlignment="Center" TextWrapping="Wrap" Color="#FFFFFF" FontSize="10" />
+							</Rectangle>
+							<Image Url="https://cdn.pixabay.com/photo/2018/01/17/15/49/fish-3088483_1280.jpg" Alignment="CenterLeft" Margin="25, 0, 0, 0" Width="250" Height="125" Dock="Fill" StretchMode="UniformToFill" />
+						</Panel>
+						<Panel Margin="0, 30, 0, 0">
+							<Rectangle Color="#613BE8" Opacity="0.861" Alignment="CenterLeft" Margin="30, 0, 0, 0" Height="150" Width="150">
+								<Text Alignment="Center" Margin="0, 0, 0, 0" TextAlignment="Center" TextWrapping="Wrap" Color="#FFFFFF" Value="쏨뱅이는 정말            못생겼어요" />
+								<Text Alignment="BottomRight" Margin="0, 0, 10, 10" Value="|  울릉도에서" TextAlignment="Center" TextWrapping="Wrap" Color="#FFFFFF" FontSize="10" />
+							</Rectangle>
+							<Image Url="https://cdn.pixabay.com/photo/2016/01/27/17/19/river-fish-1164953_1280.jpg" Alignment="CenterLeft" Margin="25, 0, 0, 0" Width="250" Height="125" Dock="Fill" StretchMode="UniformToFill" />
+						</Panel>
+					</StackPanel>
+					
+					
 				</ScrollView>
+				
+				
 			</Rectangle>
 			
 			<Rectangle Color="#ffffff" Width="260" Height="50" Alignment="TopLeft" Margin="20, 15, 0, 0">
@@ -106,7 +134,7 @@
 				<TextInput Width="210" Height="40" Alignment="CenterRight" Margin="0, 0, 5, 0" Background="#ffffff" ux:Name="shadow" Value="지도 검색" />
 			</Rectangle>
 			<Image File="Assets/kakao_profile.png" Alignment="TopRight" Margin="0, 15, 15, 0" Width="50" Height="50" />
-			<MapView Latitude="70.1035214" Longitude="30.7400957" Zoom="1">
+			<MapView Latitude="70.1035214" Longitude="30.7400957" Zoom="1" Alignment="Default">
 				<MapMarker Latitude="{latitude}" Longitude="{longtitude}" Label="도동등대(멸치)" />
 			</MapView>
 		</NativeViewHost>
