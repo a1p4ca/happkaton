@@ -1,5 +1,18 @@
 <App>
 	<ClientPanel>
+		<JavaScript>
+			const Observable = require('FuseJS/Observable')
+			const mocks = require('./mock')
+			const location = Observable(mocks.posts[0].location)
+
+			setInterval(() => {
+				location.value = mocks.posts[Math.random() * 3 | 0].location
+			}, 2000)
+
+			module.exports = {
+				location
+			}
+		</JavaScript>
 		<NativeViewHost> 
 			<Rectangle Color="#ffffff" Width="260" Height="50" Alignment="TopLeft" Margin="20, 15, 0, 0">
 				<Image File="search.png" Height="25" Width="25" Alignment="CenterRight" Margin="0, 0, 15, 0" />
@@ -7,9 +20,8 @@
 				<Shadow Angle="125" Color="#000000" />
 			</Rectangle>
 			<Image File="kakao_profile.png" Alignment="TopRight" Margin="0, 15, 15, 0" Width="50" Height="50" />
-			<MapView Latitude="36.653490" Longitude="127.903684" Zoom="6">
-				<MapMarker Latitude="37.487038" Longitude="130.918847" Label="도동등대(멸치)" />
-				<MapMarker Latitude="35.091213" Longitude="129.126841" Label="오륙도등대(상어)" />
+			<MapView Latitude="{location[0]}" Longitude="{location[1]" Zoom="6">
+				<MapMarker Latitude="{location[0]}" Longitude="{location[1]}" Label="도동등대(멸치)" />
 			</MapView>
 		</NativeViewHost>
 	</ClientPanel>
