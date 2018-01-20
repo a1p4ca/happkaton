@@ -1,6 +1,6 @@
 <Page ux:Class="Newsfeed">
 	<Router ux:Dependency="router" />
-	<JavaScript File="..\controller\Newsfeed.js" />
+	<JavaScript File="../controller/Newsfeed.js" />
 
 	<StackPanel ux:Class="PostView" Margin="20, 10, 20, 10" Padding="10, 10, 10, 10" Opacity="1" Background="#ffffff">
 		<DockPanel>

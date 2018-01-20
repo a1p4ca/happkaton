@@ -2,10 +2,11 @@
 	<Router ux:Name="router" />
 
 	<ClientPanel>
+		<!--
 		<Navigator DefaultPath="Newsfeed">
 			<Newsfeed ux:Template="Newsfeed" router="router" />
 			<Test ux:Template="Test" router="router" />
-		</Navigator>
+		</Navigator> -->
 		<JavaScript>
 			const Observable = require('FuseJS/Observable')
 			const users = Observable(
