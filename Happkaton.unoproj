@@ -6,7 +6,8 @@
     "FuseJS"
   ],
   "Includes": [
-    "*"
+    "*",
+    "**.js:Bundle"
   ],
   "Android": {
     "Geo": {

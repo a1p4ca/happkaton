@@ -1,28 +1,10 @@
 <App>
+	<Router ux:Name="router" />
+
 	<ClientPanel>
-		<JavaScript>
-			const Observable = require('FuseJS/Observable')
-			const mocks = require('./mock')
-			const location = Observable(mocks.posts[0].location)
-
-			setInterval(() => {
-				location.value = mocks.posts[Math.random() * 3 | 0].location
-			}, 2000)
-
-			module.exports = {
-				location
-			}
-		</JavaScript>
-		<NativeViewHost> 
-			<Rectangle Color="#ffffff" Width="260" Height="50" Alignment="TopLeft" Margin="20, 15, 0, 0">
-				<Image File="search.png" Height="25" Width="25" Alignment="CenterRight" Margin="0, 0, 15, 0" />
-				<TextInput Width="210" Height="40" Alignment="CenterRight" Margin="0, 0, 5, 0" Background="#ffffff" ux:Name="shadow" Value="지도 검색" />
-				<Shadow Angle="125" Color="#000000" />
-			</Rectangle>
-			<Image File="kakao_profile.png" Alignment="TopRight" Margin="0, 15, 15, 0" Width="50" Height="50" />
-			<MapView Latitude="{location[0]}" Longitude="{location[1]" Zoom="6">
-				<MapMarker Latitude="{location[0]}" Longitude="{location[1]}" Label="도동등대(멸치)" />
-			</MapView>
-		</NativeViewHost>
+		<Navigator DefaultPath="Newsfeed">
+			<Newsfeed ux:Template="Newsfeed" router="router" />
+			<Test ux:Template="Test" router="router" />
+		</Navigator>
 	</ClientPanel>
 </App>
