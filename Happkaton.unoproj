@@ -1,0 +1,16 @@
+{
+  "RootNamespace":"",
+  "Packages": [
+    "Fuse.Maps",
+    "Fuse",
+    "FuseJS"
+  ],
+  "Includes": [
+    "*"
+  ],
+  "Android": {
+    "Geo": {
+        "ApiKey": "api-key"
+    }
+  }
+}
