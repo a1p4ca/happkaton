@@ -1,3 +1,7 @@
-<App Background="#2196F3">
-    <Text Value="Hello, World!" />
+<App>
+	<Router ux:Name="router" />
+	<Navigator DefaultPath="amu">
+		<amu ux:Template="amu" router="router" />
+		<guna ux:Template="guna" router="router" />
+	</Navigator>
 </App>
