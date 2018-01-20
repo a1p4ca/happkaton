@@ -1,9 +1,13 @@
 <App>
-
 	<ClientPanel>
 		<NativeViewHost> 
+			<Rectangle Color="#ffffff" Width="260" Height="50" Alignment="TopLeft" Margin="20, 15, 0, 0">
+				<Image File="search.png" Height="25" Width="25" Alignment="CenterRight" Margin="0, 0, 15, 0" />
+				<TextInput Width="210" Height="40" Alignment="CenterRight" Margin="0, 0, 5, 0" Background="#ffffff" ux:Name="shadow" Value="지도 검색" />
+				<Shadow Angle="125" Color="#000000" />
+			</Rectangle>
 			<MapView Latitude="59.911567" Longitude="10.741030" Zoom="10">
-				<MapMarker Latitude="59.911567" Longitude="10.741030" Label="HelloWorld"/>
+				<MapMarker Latitude="59.911567" Longitude="10.741030" Label="HelloWorld" />
 			</MapView>
 		</NativeViewHost>
 	</ClientPanel>
