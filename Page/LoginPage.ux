@@ -1,0 +1,34 @@
+<Page ux:Class="LoginPage">
+  <Router ux:Dependency="router" />
+  <JavaScript File="..\controller\LoginPage.js" />
+	<DockPanel>
+		<Image File="..\Assets\LoginBack.jpg" Alignment="Center" Dock="Fill" StretchMode="UniformToFill">
+			<Grid Rows="1.2*,auto,0.5*,0.3*">
+				<Text Margin="50, -50, 50, 50" Alignment="Center" Color="#FFFFFF" Value="Fishing Pointer" FontSize="41">
+					<Shadow Angle="0" Color="#000" Size="25" />
+				</Text>
+				<Grid ColumnCount="2" Margin="50, 0, 50, 0" Columns="1*,6*" Rows="1*,1*" ChildOrder="RowMajor" CellSpacing="5" Alignment="Default">
+					<Image Width="24" Height="72" File="..\assets\user.png" />
+					<TextInput PlaceholderText="Username" PlaceholderColor="#C7C7C7" Margin="5, 0, 0, 0" Alignment="Default" TextColor="#FFFFFF" />
+					<Rectangle ColumnSpan="2" Color="#FFFFFF" Height="1" />
+					<Image File="..\assets\pass.png" Width="24" Height="72" Margin="0, 0, 0, 0" Padding="0, 0, 0, 0" />
+					<TextInput Margin="5, 0, 0, 0" PlaceholderText="Password" PlaceholderColor="#C7C7C7" Alignment="Default" Padding="0, 0, 0, 0" TextColor="#FFFFFF" IsPassword="true" />
+					<Rectangle ColumnSpan="2" Height="1" Color="#FFFFFF" Margin="0, 0, 0, 0" Padding="0, 0, 0, 0" />
+				</Grid>
+				<Rectangle ux:Name="Rectangle" Margin="0, 0, 0, 0" Width="300" Height="60" CornerRadius="30" Clicked="{onClickLogin}" Opacity="1" Color="#5882FA">
+					<Text Alignment="Center" Value="Login" TextColor="#FFFFFF" FontSize="18" />
+					<Shadow ux:Name="Shadow" Size="10" Angle="90" Distance="3" />
+          <WhilePressed>
+            <Change Rectangle.Color="#c54506" Duration="0.1" />
+            <Change Shadow.Size="3" Duration="0.1" />
+          </WhilePressed>
+				</Rectangle>
+				<Text ux:Name="Text" Value="Need an account?" TextColor="#2196f3" Alignment="Center" Clicked="{onClickSignup}" Opacity="1">
+          <WhilePressed>
+            <Change Text.Color="#1976d2" Duration="0.1" />
+          </WhilePressed>
+        </Text>
+			</Grid>
+		</Image>
+	</DockPanel>
+</Page>

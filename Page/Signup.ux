@@ -1,0 +1,26 @@
+<Page ux:Class="Signup">
+  <Router ux:Dependency="router" />
+
+  <ClientPanel>
+    <Text Color="#000000" Value="Sign Up" FontSize="40" Alignment="HorizontalCenter" Margin="20, 290, 20, 0" />
+    <StackPanel>
+      <Image Url="http://blogfiles13.naver.net/20130301_79/neoyork_1362083229508gycjg_JPEG/instagram-socialmatic-camera-5.jpg" Height="150" Margin="0, 0, 0, 0"  />
+      <Rectangle Color="#090909" Margin="0, 0, 0, 0" Padding="0, 5, 0, 0" />
+      <StackPanel>
+        <Text Value="ID" TextAlignment="Left" FontSize="35" Margin="20, 75, 0, 0" Padding="0, 0, 0, 0" Color="#0F0B0B">
+          <TextInput Value="111111" Margin="60, 0, 0, 0" Opacity="1" TransformOrigin="VerticalBoxCenter">
+            <Rotation />
+          </TextInput>
+        </Text>
+      </StackPanel>
+      <Rectangle Color="#010101" Padding="0, 2, 0, 0" Margin="10, 0, 30, 0" />
+      <StackPanel>
+        <Text Value="PW" TextAlignment="Left" FontSize="35" Margin="10, 10, 0, 0" LayoutRole="Standard" Layer="Underlay" Color="#0F0B0B">
+          <TextInput Margin="70, 0, 0, 0" Value="111111" />
+        </Text>
+      </StackPanel>
+      <Rectangle Padding="0, 2, 0, 0" Margin="10, 0, 30, 0" Color="#010101" />
+      <Button Text="Log in" Margin="0,0,0,0" Clicked="{onClickSign}"/>
+    </StackPanel>
+  </ClientPanel>
+</Page>
