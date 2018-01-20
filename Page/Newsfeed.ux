@@ -8,8 +8,6 @@
 			<Text Value="{username}" Alignment="CenterLeft" Margin="10, 0, 0, 0" />
 		</DockPanel>
 		
-		
-		
 		<Image File="{image}" Margin="8, 12, 8, 12" />
 		<Text Value="{message}" />
 		<DockPanel Margin="0, 5, 0, 0">
@@ -20,7 +18,6 @@
 	</StackPanel>
 
 	<ClientPanel>
-		
 		<Rectangle Color="#000000" Width="150" Height="150" Alignment="Bottom" Clicked="{move}" />
 		<ScrollView>
 			<StackPanel ItemSpacing="0" Margin="0, 0, 0, 0">
