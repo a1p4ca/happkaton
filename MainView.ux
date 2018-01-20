@@ -1,5 +1,17 @@
 <App>
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+	<Router ux:Name="router" />
+
+	<ClientPanel>
+		<Navigator DefaultPath="Newsfeed">
+			<Newsfeed ux:Template="Newsfeed" router="router" />
+			<Test ux:Template="Test" router="router" />
+		</Navigator>
+=======
+>>>>>>> fcd2f4465fdc144627277a74bec73ac71570f250
 	<ClientPanel>
 		<JavaScript>
 			const Observable = require('FuseJS/Observable')
@@ -229,5 +241,6 @@
 				<MapMarker Latitude="{latitude}" Longitude="{longtitude}" Label="도동등대(멸치)" />
 			</MapView>
 		</NativeViewHost>
+>>>>>>> 9731ea5b03c58979ebcd51b57e71f8640d7ac355
 	</ClientPanel>
 </App>

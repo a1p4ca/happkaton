@@ -1,0 +1,7 @@
+<Page ux:Class="Test">
+	<Router ux:Dependency="router" />
+
+	<ClientPanel>
+		<Text Value="Sex" />
+	</ClientPanel>
+</Page>

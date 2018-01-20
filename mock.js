@@ -43,9 +43,11 @@ const users = Observable(
     }
 )
 
-const posts = Obserbale(
+const posts = Observable(
     {
         userid: 0,
+        username: users.getAt(0).name,
+        userimage: users.getAt(0).image,
         location: ['59.9117715', '10.7400957'],
         message: "고기 잡았다!",
         image: "http://cfile10.uf.tistory.com/image/124C5A3B502CFB370EE113",
@@ -53,6 +55,8 @@ const posts = Obserbale(
     },
     {
         userid: 3,
+        username: users.getAt(3).name,
+        userimage: users.getAt(3).image,
         location: ['38.9157715', '160.7400957'],
         message: "즐거운 바다여행~",
         image: "http://cfile10.uf.tistory.com/image/124C5A3B502CFB370EE113",
@@ -60,6 +64,8 @@ const posts = Obserbale(
     },
     {
         userid: 4,
+        username: users.getAt(4).name,
+        userimage: users.getAt(4).image,
         location: ['70.1035214', '30.7400957'],
         message: "바다왔어요 여러분!",
         image: "http://cfile10.uf.tistory.com/image/124C5A3B502CFB370EE113",
