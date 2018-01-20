@@ -7,8 +7,9 @@
 				<Shadow Angle="125" Color="#000000" />
 			</Rectangle>
 			<Image File="kakao_profile.png" Alignment="TopRight" Margin="0, 15, 15, 0" Width="50" Height="50" />
-			<MapView Latitude="59.911567" Longitude="10.741030" Zoom="10">
-				<MapMarker Latitude="59.911567" Longitude="10.741030" Label="HelloWorld" />
+			<MapView Latitude="36.653490" Longitude="127.903684" Zoom="6">
+				<MapMarker Latitude="37.487038" Longitude="130.918847" Label="도동등대(멸치)" />
+				<MapMarker Latitude="35.091213" Longitude="129.126841" Label="오륙도등대(상어)" />
 			</MapView>
 		</NativeViewHost>
 	</ClientPanel>
