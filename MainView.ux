@@ -8,92 +8,30 @@
 			<Test ux:Template="Test" router="router" />
 		</Navigator> -->
 		<JavaScript>
-			const Observable = require('FuseJS/Observable')
-			const users = Observable(
-			    {
-			        id: 0,
-			        name: "사람인",
-			        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvwALUKGflg-nRY0Z0Xr0pjmfrnxhLtJsU39GFX2RTmSQ_skBLww",
-			        bio: "저는 고기잡는 사람입니다.",
-			        follower: [1, 2], // 자신을 팔로우하는 사람
-			        following: [1, 3, 4] // 자신이 팔로잉하는 사람
-			    },
-			    {
-			        id: 1,
-			        name: "홍길동",
-			        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvwALUKGflg-nRY0Z0Xr0pjmfrnxhLtJsU39GFX2RTmSQ_skBLww",
-			        bio: "저는 회먹는 사람입니다",
-			        follower: [0, 3],
-			        following: [0, 2, 3, 4]
-			    },
-			    {
-			        id: 2,
-			        name: "김건",
-			        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvwALUKGflg-nRY0Z0Xr0pjmfrnxhLtJsU39GFX2RTmSQ_skBLww",
-			        bio: "울진 해양 전문가",
-			        follower: [1, 4],
-			        following: [0, 4]
-			    },
-			    {
-			        id: 3,
-			        name: "John",
-			        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvwALUKGflg-nRY0Z0Xr0pjmfrnxhLtJsU39GFX2RTmSQ_skBLww",
-			        bio: "Beautiful Sea",
-			        follower: [0, 1],
-			        following: [1, 4]
-			    },
-			    {
-			        id: 4,
-			        name: "이지은",
-			        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvwALUKGflg-nRY0Z0Xr0pjmfrnxhLtJsU39GFX2RTmSQ_skBLww",
-			        bio: "바다 넘 조아용~",
-			        follower: [0, 1, 2, 3],
-			        following: [2]
-			    }
-			)
+		const Observable = require('FuseJS/Observable')
+        const mock = require('./mock.js')
 
-			const posts = Observable(
-			    {
-			        userid: 0,
-			        location: ['59.9117715', '10.7400957'],
-			        message: "고기 잡았다!",
-			        image: "http://cfile10.uf.tistory.com/image/124C5A3B502CFB370EE113",
-			        date: new Date()
-			    },
-			    {
-			        userid: 3,
-			        location: ['38.9157715', '160.7400957'],
-			        message: "즐거운 바다여행~",
-			        image: "http://cfile10.uf.tistory.com/image/124C5A3B502CFB370EE113",
-			        date: new Date()
-			    },
-			    {
-			        userid: 4,
-			        location: ['70.1035214', '30.7400957'],
-			        message: "바다왔어요 여러분!",
-			        image: "http://cfile10.uf.tistory.com/image/124C5A3B502CFB370EE113",
-			        date: new Date()
-			    }
-			)
-			const mocks = {users: users, posts: posts}
-			const location = Observable(mocks.posts.getAt(2).location)
-			const latitude = Observable(location.value[0])
-			const longtitude = Observable(location.value[1])
+        const post = mock.posts[0]
+        const latitude = Observable(post.location[0])
+        const longtitude = Observable(post.location[1])
+        const user = Observable(mock.users[post.userid])
+        const label = Observable(mock.users[post.message])
 
-			setInterval(() => {
-				latitude.value = mocks.posts.getAt(Math.random() * 3 | 0).location[0]
-				longtitude.value = mocks.posts.getAt(Math.random() * 3 | 0).location[1]
+        setInterval(() => {
+            const post = mock.posts[Math.random() * 4 | 0]
+            latitude.value = post.location[0]
+            longtitude.value = post.location[1]
+            user.value = mock.users[post.userid]
+            label.value = post.message
+            console.log(latitude.toString(), longtitude.toString(), user.toString(), label.toString())
+        }, 1000 + (Math.random() * 6000 | 0))
 
-			}, 2000)
-
-			module.exports = {
-				latitude, longtitude
-			}
-
-			console.log(module.exports.longtitude.toString())
+        module.exports = {
+            latitude, longtitude, user, label
+        }
 		</JavaScript>
 		<NativeViewHost> 
-
+			<!--
 			<Rectangle Alignment="BottomCenter" Color="#ffffff" CornerRadius="20" Margin="20, 0, 20, 15" Width="390" Height="620" Opacity="1">
 				
 				<Rectangle ux:Name="overlayRect" Color="#e3e4e8" Width="200" CornerRadius="10" Alignment="Top" Margin="0, 7, 0, 0" Height="5" Opacity="1" />
@@ -128,14 +66,14 @@
 				
 				
 			</Rectangle>
-			
+			-->
 			<Rectangle Color="#ffffff" Width="260" Height="50" Alignment="TopLeft" Margin="20, 15, 0, 0">
 				<Image File="search.png" Height="25" Width="25" Alignment="CenterRight" Margin="0, 0, 15, 0" />
 				<TextInput Width="210" Height="40" Alignment="CenterRight" Margin="0, 0, 5, 0" Background="#ffffff" ux:Name="shadow" Value="지도 검색" />
 			</Rectangle>
 			<Image File="Assets/kakao_profile.png" Alignment="TopRight" Margin="0, 15, 15, 0" Width="50" Height="50" />
-			<MapView Latitude="70.1035214" Longitude="30.7400957" Zoom="1" Alignment="Default">
-				<MapMarker Latitude="{latitude}" Longitude="{longtitude}" Label="도동등대(멸치)" />
+			<MapView Latitude="37.311583" Longitude="129.292658" Zoom="3" Alignment="Default">
+				<MapMarker Latitude="{latitude}" Longitude="{longtitude}" Label="{label}" />
 			</MapView>
 		</NativeViewHost>
 	</ClientPanel>

@@ -1,6 +1,4 @@
-const Observable = require('FuseJS/Observable');
-
-const users = Observable(
+const users = [
     {
         id: 0,
         name: "사람인",
@@ -41,39 +39,44 @@ const users = Observable(
         follower: [0, 1, 2, 3],
         following: [2]
     }
-)
+]
 
-const posts = Observable(
+const posts = [
     {
         userid: 0,
-        username: users.getAt(0).name,
-        userimage: users.getAt(0).image,
-        location: ['59.9117715', '10.7400957'],
-        message: "고기 잡았다!",
+        location: ['37.311583', '129.292658'],
+        message: "새벽부터 감성 낚시 >_<",
         image: "http://cfile10.uf.tistory.com/image/124C5A3B502CFB370EE113",
         date: new Date()
     },
     {
         userid: 3,
-        username: users.getAt(3).name,
-        userimage: users.getAt(3).image,
-        location: ['38.9157715', '160.7400957'],
-        message: "즐거운 바다여행~",
+        location: ['37.316437', '129.287090'],
+        message: "즐거운 바다여행",
         image: "http://cfile10.uf.tistory.com/image/124C5A3B502CFB370EE113",
         date: new Date()
     },
     {
         userid: 4,
-        username: users.getAt(4).name,
-        userimage: users.getAt(4).image,
-        location: ['70.1035214', '30.7400957'],
-        message: "바다왔어요 여러분!",
+        location: ['37.320103', '129.272218'],
+        message: "너와 함께한 첫 바다",
+        image: "http://cfile10.uf.tistory.com/image/124C5A3B502CFB370EE113",
+        date: new Date()
+    },
+    {
+        userid: 2,
+        location: ['37.319132', '129.272071'],
+        message: "둘째날 숙소!",
+        image: "http://cfile10.uf.tistory.com/image/124C5A3B502CFB370EE113",
+        date: new Date()
+    },
+    {
+        userid: 1,
+        location: ['37.324533', '129.267985'],
+        message: "해변에서 그녀와..",
         image: "http://cfile10.uf.tistory.com/image/124C5A3B502CFB370EE113",
         date: new Date()
     }
-)
+]
 
-module.exports = {
-    users: users,
-    posts: posts
-}
+module.exports = {users, posts}
